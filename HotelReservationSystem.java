@@ -89,30 +89,19 @@ public class HotelReservationSystem {
 
     public static void main(String[] args) {
         try {
-            // Establish database connection (Replace with your actual connection string, username, password)
-            String url = "jdbc:mysql://localhost:3306/hotel_db";
+            String url = "jdbc:mysql://db.labthreesixfive.com/amustang?autoReconnect=true&useSSL=false";
             String user = "username";
             String password = "password";
             Connection conn = DriverManager.getConnection(url, user, password);
 
-            // Initialize the system
             HotelReservationSystem system = new HotelReservationSystem(conn);
 
-            // Test cases
-            system.viewRooms();  // View all rooms
-            system.viewReservations();  // View all reservations
-
-            // Example reservation
-            Date checkInDate = Date.valueOf("2025-05-01");
-            Date checkOutDate = Date.valueOf("2025-05-05");
-            system.makeReservation("R001", "John", "Doe", checkInDate, checkOutDate, 120.50, 2, 0);
-
-            // Cancel a reservation (example)
-            system.cancelReservation(101);  // Example reservation code
+            system.viewRooms();
+            system.viewReservations();
 
             conn.close();  // Close the connection
         } catch (SQLException e) {
-            System.err.println("Error connecting to the database: " + e.getMessage());
+            System.err.println("Error: " + e.getMessage());
         }
     }
 }

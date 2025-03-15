@@ -5,4 +5,4 @@ For this assignment, I created 5 different file tabs that are specified below
 - Rooms.java
 - Reservations.java
 - HotelReservationSystem.java
-- CommandLineInterface.java
+- TestingConnection.java
